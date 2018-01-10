@@ -1,0 +1,15 @@
+<h1><%= @player.name %></h1>
+<table class="table">
+  <thead>
+    <th>Away Club</th>
+    <th>Goals Scored</th>
+  </thead>
+  <tbody>
+    <% @scores.each do |score| %>
+      <tr>
+        <td><%= score['away_club'] %></td>
+        <td><%= score['goal_scored'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+<h1><%= @league.name %></h1>
+<h2><%= link_to 'League Calender', @league %></h2>
+<table class="table">
+  <thead>
+    <th>Home Club</th>
+    <th>Away Club</th>
+    <th>Stadium</th>
+    <th>Location</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Home Goals</th>
+    <th>Away Goals</th>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.home_club.name %></td>
+        <td><%= game.away_club.name %></td>
+        <td><%= game.stadium.name %></td>
+        <td><%= game.stadium.location %></td>
+        <td><%= game.date %></td>
+        <td><%= game.time.localtime.strftime('%I:%M %p') %></td>
+        <td><%= game.home_goals %></td>
+        <td><%= game.away_goals %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

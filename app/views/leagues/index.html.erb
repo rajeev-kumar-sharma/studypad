@@ -1,0 +1,19 @@
+<h1>Football Leagues</h1>
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </thead>
+  <tbody>
+    <% @leagues.each do |league| %>
+      <tr>
+        <td><%= link_to league.name, league %></td>
+        <td><%= league.country %></td>
+        <td><%= league.start_date %></td>
+        <td><%= league.end_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

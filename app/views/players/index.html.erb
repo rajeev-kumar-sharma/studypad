@@ -1,0 +1,15 @@
+<h1><%= @club.name %></h1>
+<table class="table">
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><a href=<%= %"/clubs/#{@club.id}/players/#{player.id}/stats?league_id=#{@league.id}" %>><%= player.first_name %></a></td>
+        <td><%= player.last_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

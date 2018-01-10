@@ -1,0 +1,28 @@
+<h1><%= @league.name %></h1>
+<h2><%= link_to 'League Calender', @league %></h2>
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Game Played</th>
+    <th>Win</th>
+    <th>Loss</th>
+    <th>Drawn</th>
+    <th>Points</th>
+    <th>Goal Didderence</th>
+    <th>Goals Scored</th>
+  </thead>
+  <tbody>
+    <% @clubs.each do |club| %>
+      <tr>
+        <td><%= link_to club['name'], club_players_path(club['id'], league_id: @league.id) %></td>
+        <td><%= club['games_played'] %></td>
+        <td><%= club['win'] %></td>
+        <td><%= club['lost'] %></td>
+        <td><%= club['drawn'] %></td>
+        <td><%= club['points'] %></td>
+        <td><%= club['goal_difference'] %></td>
+        <td><%= club['goals_scored'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
